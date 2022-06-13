@@ -35,11 +35,13 @@ public class Main2 {
             int foundIndex = alphabet.indexOf(currentSymbol);
 
             if (foundIndex != -1) {
-                //улучшить!!!
-                int newIndex = foundIndex - key % alphabet.length();
+
+                int newIndex = (foundIndex - key % alphabet.length() + alphabet.length()) % alphabet.length();
+
+                /*int newIndex = foundIndex - key % alphabet.length();
                 if (newIndex < 0) {
                     newIndex = alphabet.length() - newIndex;
-                }
+                }*/
                 decryptedString += alphabet.charAt(newIndex);
             } else {
                 decryptedString += currentSymbol;
